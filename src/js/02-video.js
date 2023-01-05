@@ -5,16 +5,16 @@ import throttle from 'throttleit';
 
     setCurrentTime();
 
-player.on('timeupdata', throttle(playedTime, 1000)); 
+player.on('timeupdata', throttle(pauseTime, 1000)); 
 
 function pauseTime(data) {
     localStorage.setItem('videoplayer-current-time', `${data.seconds}`);
 }
 
 function setCurrentTime() {
-    const timeToPause = localStorage.getItem('videoplayer-current-time');
-    if (timeToPause) {
-        player.setCurrentTime(timeToPause);
+    const savedTimeToPlay = localStorage.getItem('videoplayer-current-time');
+    if (savedTimeToPlay) {
+        player.setCurrentTime(savedTimeToPlay);
     }
     }
 
