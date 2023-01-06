@@ -10,10 +10,10 @@ imgGalleryRef.innerHTML = galleryMarkUp;
 
 imgGalleryRef.addEventListener("click", onImageClick);
 
-let lightbox = new SimpleLightbox('.gallery a', {
-  captionsData: 'alt',
-  captionDelay: 250,
-});
+// let lightbox = new SimpleLightbox('.gallery a', {
+//   captionsData: 'alt',
+//   captionDelay: 250,
+// });
 
 function createMakrUp(galleryItems) {
   return galleryItems
@@ -31,27 +31,12 @@ function createMakrUp(galleryItems) {
     .join("");
 } 
 
-const instance = basicLightbox.create(`<img class="modal-img" src="">`, {
-  onShow: instance => {
-    window.addEventListener("keydown", onEscCloseModal);
-  },
-  onClose: instance => {
-    window.removeEventListener("keydown", onEscCloseModal);
-  },
+let lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
 });
 
-function onImageClick(event) {
-  event.preventDefault();
-  if (event.target.nodeName !== "IMG") {
-    return;
-  }
-  instance.element().querySelector('img').src=event.target.dataset.source;
-  instance.show();
-}
+// function onImageClick(event) {
+//   event.preventDefault();
+//  }
 
-function onEscCloseModal(event) {
-  if (event.code === "Escape") {
-    instance.close();
-    return;
-  }
-}
