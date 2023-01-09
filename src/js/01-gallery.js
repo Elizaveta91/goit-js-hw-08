@@ -8,13 +8,6 @@ const imgGalleryRef = document.querySelector(".gallery");
 const galleryMarkUp = createMakrUp(galleryItems);
 imgGalleryRef.innerHTML = galleryMarkUp;
 
-imgGalleryRef.addEventListener("click", onImageClick);
-
-// let lightbox = new SimpleLightbox('.gallery a', {
-//   captionsData: 'alt',
-//   captionDelay: 250,
-// });
-
 function createMakrUp(galleryItems) {
   return galleryItems
     .map(({ preview, original, description }) => {
