@@ -17,8 +17,9 @@ function onInput(evt) {
 function fillFormOnLoad() {
   const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
   if (savedData) {
-    formRef.elements [email].value = savedData.email;
-    formRef.elements [message].value = savedData.message;
+     Object.entries(savedData).forEach(([email, message, value]) => {
+      filterForm.elements[email, message].value = value;
+    });
   }
 }
 
