@@ -18,7 +18,7 @@ function fillFormOnLoad() {
   const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
   if (savedData) {
      Object.entries(savedData).forEach(([email, message, value]) => {
-      filterForm.elements[email, message].value = value;
+       formRef.elements[email, message].value = value;
     });
   }
 }
